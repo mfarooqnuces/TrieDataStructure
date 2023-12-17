@@ -3,59 +3,59 @@
 TrieNode root = new();
 
 Console.WriteLine("*********************************** Insertion ***********************************");
-string[] inputStrings = ["and", "ant", "do", "geek", "dad", "ball"];
 
+string[] inputStrings = ["and", "ant", "do", "geek", "dad", "ball"];
 foreach (string str in inputStrings)
 {
-    TrieNode.Insert(root, str);
-    TrieNode.DisplayMessage($"Inserted String: '{str}'", IsSuccessfull: true);
+    TrieNodeOperation.Insert(root, str);
+    TrieNodeOperation.DisplayMessage($"Inserted String: '{str}'", IsSuccessfull: true);
 }
 
 Console.WriteLine("\n*********************************** String Search ***********************************");
-string[] searchQueryStrings = ["do", "geek", "bat"];
 
+string[] searchQueryStrings = ["do", "geek", "bat"];
 foreach (string str in searchQueryStrings)
 {
     Console.WriteLine("Query String: " + str);
-    if (TrieNode.SearchKey(root, str))
+    if (TrieNodeOperation.SearchKey(root, str))
     {
-        TrieNode.DisplayMessage($"The query string '{str}' is present in the Trie", IsSuccessfull: true);
+        TrieNodeOperation.DisplayMessage($"The query string '{str}' is present in the Trie", IsSuccessfull: true);
     }
     else
     {
-        TrieNode.DisplayMessage($"The query string '{str}' is not present in the Trie", IsSuccessfull: false);
+        TrieNodeOperation.DisplayMessage($"The query string '{str}' is not present in the Trie", IsSuccessfull: false);
     }
 }
 
 Console.WriteLine("\n*********************************** PreFix Search ***********************************");
-string[] searchQueryPreFixStrings = ["d", "ge", "bat"];
 
+string[] searchQueryPreFixStrings = ["d", "ge", "bat"];
 foreach (string str in searchQueryPreFixStrings)
 {
     Console.WriteLine("Query String Prefix: " + str);
-    if (TrieNode.IsPrefixExist(root, str))
+    if (TrieNodeOperation.IsPrefixExist(root, str))
     {
-        TrieNode.DisplayMessage($"The PreFix string '{str}' is present in the Trie", IsSuccessfull: true);
+        TrieNodeOperation.DisplayMessage($"The PreFix string '{str}' is present in the Trie", IsSuccessfull: true);
     }
     else
     {
-        TrieNode.DisplayMessage($"The PreFix string '{str}' is not present in the Trie", IsSuccessfull: false);
+        TrieNodeOperation.DisplayMessage($"The PreFix string '{str}' is not present in the Trie", IsSuccessfull: false);
     }
 }
 
 Console.WriteLine("\n*********************************** Deletion ***********************************");
-string[] deleteQueryStrings = ["geek", "tea"];
 
+string[] deleteQueryStrings = ["geek", "tea"];
 foreach (string str in deleteQueryStrings)
 {
     Console.WriteLine("Query String: " + str);
-    if (TrieNode.DeleteKey(root, str))
+    if (TrieNodeOperation.DeleteKey(root, str))
     {
-        TrieNode.DisplayMessage($"String '{str}' deleted successfully", IsSuccessfull: true);
+        TrieNodeOperation.DisplayMessage($"String '{str}' deleted successfully", IsSuccessfull: true);
     }
     else
     {
-        TrieNode.DisplayMessage($"String '{str}' is not present in the Trie", IsSuccessfull: false);
+        TrieNodeOperation.DisplayMessage($"String '{str}' is not present in the Trie", IsSuccessfull: false);
     }
 }
 
